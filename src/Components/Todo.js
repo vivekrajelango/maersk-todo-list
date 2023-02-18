@@ -7,7 +7,7 @@ const Todo=()=>{
     const [addedList, setAddedList] = useState(data);
     const [limit, setLimit] = useState(5);
     const [indexNum, setIndexNum] = useState();
-    // const [checked, setChecked] = useState();
+    const [checked, setChecked] = useState(false);
     const modalRef = useRef();
     const checkRef = useRef();
 
@@ -38,6 +38,7 @@ const Todo=()=>{
 
     const closeModal=()=>{
         modalRef.current.style.display = 'none';
+        setChecked(false)
         // checkRef.current.checked=false;
         // console.log('xx', checkRef.current.checked)
     }
@@ -69,7 +70,7 @@ const Todo=()=>{
             <div className="todo-List">
                     {todoList ? todoList.map((item, index)=>{
                         return <div key={item.id} className="todo-Items d-flex">
-                                <input type="checkbox" ref={checkRef} value={item.id} className="me-1" onChange={e=>todoHandler(e,index)} />
+                                <input type="checkbox" ref={checkRef} value={item.id} className="me-1" onChange={e=>todoHandler(e,index)} checked={checked}/>
                                 <label className="d-inline-block text-truncate" style={{'maxWidth': '250px'}}>{index+1}. {item.todo}</label>
                             </div>
                     }) : ''}
@@ -84,7 +85,7 @@ const Todo=()=>{
                     <h5 className="modal-title" id="exampleModalLabel">Warning</h5>
                 </div>
                 <div className="modal-body">
-                    Are you sure want to add this without 1st record?
+                    Are you sure want to proceed without 1st record?
                 </div>
                 <div className="modal-footer">
                     <button type="button" className="btn btn-secondary" onClick={closeModal} data-bs-dismiss="modal">Close</button>
