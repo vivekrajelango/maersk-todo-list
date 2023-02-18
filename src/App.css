@@ -14,6 +14,7 @@
 .todo-List{
   background-color: #D9D9D9;
   padding: 10px;
+  height:300px;
 }
 .todo-List .todo-Items {
   background-color: #FFF;

@@ -41,14 +41,14 @@ const Todo=()=>{
             </div>
             <h4 className="text-center mt-3">To Do</h4>
             <div className="todo-List">
-                    {todoList ? todoList.map((item)=>{
+                    {todoList ? todoList.map((item, index)=>{
                         return <div key={item.id} className="todo-Items d-flex">
                                 <input type="checkbox" value={item.id} className="me-1" onChange={todoHandler}/>
-                                <label className="d-inline-block text-truncate" style={{'maxWidth': '250px'}}>{item.id}. {item.todo}</label>
+                                <label className="d-inline-block text-truncate" style={{'maxWidth': '250px'}}>{index+1}. {item.todo}</label>
                             </div>
                     }) : ''}
             </div>
-            <h4 className=" my-2 text-center">Task Board by Vivek Raj Elango</h4>
+            <h4 className=" my-5 text-center">Task Board by Vivek Raj Elango</h4>
         </div>
     )
 }
