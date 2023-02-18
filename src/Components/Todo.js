@@ -79,13 +79,13 @@ const Todo=()=>{
         
         </div>
         <div className="modal fade show" ref={modalRef} id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div className="modal-dialog">
+            <div className="modal-dialog modal-dialog-centered">
                 <div className="modal-content">
                 <div className="modal-header">
                     <h5 className="modal-title" id="exampleModalLabel">Warning</h5>
                 </div>
                 <div className="modal-body">
-                    Are you sure want to proceed without 1st record?
+                Are you sure want to proceed without completing the previous tasks?
                 </div>
                 <div className="modal-footer">
                     <button type="button" className="btn btn-secondary" onClick={closeModal} data-bs-dismiss="modal">Close</button>
