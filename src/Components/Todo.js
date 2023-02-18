@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 
+const prevRecord = [{"id":29,"todo":"Make own LEGO creation","completed":false}]
+
 const Todo=()=>{
     const [todoList, setTodoList] = useState();
-    const [addedList, setAddedList] = useState([]);
+    const [addedList, setAddedList] = useState(prevRecord);
     const [limit, setLimit] = useState(5);
 
     useEffect(()=>{
@@ -33,7 +35,7 @@ const Todo=()=>{
                                 <div className="card-body">
                                     <p className="card-text">{item.todo}</p>
                                 </div>
-                        </div>
+                            </div>
                 }) : ''}
                 </div>
             </div>
@@ -42,10 +44,11 @@ const Todo=()=>{
                     {todoList ? todoList.map((item)=>{
                         return <div key={item.id} className="todo-Items d-flex">
                                 <input type="checkbox" value={item.id} className="me-1" onChange={todoHandler}/>
-                                <label className="d-inline-block text-truncate" style={{'maxWidth': '250px'}}>{item.todo}</label>
+                                <label className="d-inline-block text-truncate" style={{'maxWidth': '250px'}}>{item.id}. {item.todo}</label>
                             </div>
                     }) : ''}
             </div>
+            <h4 className=" my-2 text-center">Task Board by Vivek Raj Elango</h4>
         </div>
     )
 }
