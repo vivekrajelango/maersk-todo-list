@@ -1,3 +1,4 @@
+import "../node_modules/bootstrap/dist/js/bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Todo from './Components/Todo';
